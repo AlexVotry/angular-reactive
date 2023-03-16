@@ -9,8 +9,7 @@ import { Course } from '../model/course';
 })
 export class CoursesService {
 
-  constructor(
-    private http:HttpClient) {}
+  constructor(private http:HttpClient) {}
 
   private baseUrl = '/api/courses';
 
