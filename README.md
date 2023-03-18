@@ -19,3 +19,5 @@ Next is adding Loading and Error components with services. We can put the provid
 
 State Management: Locally store Obsevables to avoid excessive API calls for data.
 We created courses.store.ts for this.
+
+auth: add authentication using local storage to stay logged in using auth.store.ts
