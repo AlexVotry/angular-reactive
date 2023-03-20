@@ -21,3 +21,6 @@ State Management: Locally store Obsevables to avoid excessive API calls for data
 We created courses.store.ts for this.
 
 auth: add authentication using local storage to stay logged in using auth.store.ts
+
+ui: Master-Detail UI Pattern: works like props in React. Pass state to a child component. This way state only exists while in that component.
+
