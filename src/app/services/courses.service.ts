@@ -14,6 +14,27 @@ export class CoursesService {
 
   private baseUrl = '/api/courses';
 
+  loadCourseById(courseId: number) {
+    return this.http.get<Course>(`${this.baseUrl}/${courseId}`)
+    .pipe(
+      shareReplay()
+    );
+  }
+
+
+  loadLessonsById(courseId: number): Observable<Lesson[]> {
+     return this.http.get<Lesson[]>('/api/lessons', {
+      params: {
+        courseId: courseId.toString(),
+        pageSize: "100"
+      }
+    })
+      .pipe(
+        map(res => res["payload"]),
+        shareReplay()
+      )
+  }
+
   loadAllCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(this.baseUrl)
       .pipe(
